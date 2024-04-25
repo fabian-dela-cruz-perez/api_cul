@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './user/user.module';
 import { User } from './user/entities/user.entity';
 import { ActividadesModule } from './actividades/actividades.module';
+import { actividades } from './actividades/entities/actividade.entity';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -14,7 +15,7 @@ import { ActividadesModule } from './actividades/actividades.module';
    username: 'root',
    password: '03160606',
    database: 'api_cul',
-   entities: [User],
+   entities: [User,actividades],
    synchronize: true,
   }), UserModule, ActividadesModule],
   controllers: [AppController],
