@@ -4,13 +4,18 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 export class User {
     @PrimaryGeneratedColumn()
     id: number;
-
     @Column()
-    firstName: string;
-
+    firs_tName: string;
     @Column()
-    lastName: string;
-
+    last_Name: string;
+    @Column()
+    identification_car: Number;
+    @Column()
+    phone_number: number;
+    @Column()
+    address: string;
+    @Column()
+    e_mail: string;
     @Column({ default: true })
-    isActive: boolean; 
+    isActive: boolean;
 }

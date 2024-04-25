@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './user/user.module';
 import { User } from './user/entities/user.entity';
+import { ActividadesModule } from './actividades/actividades.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -15,7 +16,7 @@ import { User } from './user/entities/user.entity';
    database: 'api_cul',
    entities: [User],
    synchronize: true,
-  }), UserModule],
+  }), UserModule, ActividadesModule],
   controllers: [AppController],
   providers: [AppService],
 })
