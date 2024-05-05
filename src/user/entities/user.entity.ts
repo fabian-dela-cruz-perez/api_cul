@@ -5,11 +5,11 @@ export class User {
     @PrimaryGeneratedColumn()
     id: number;
     @Column()
-    firs_tName: string;
+    first_name: string;
     @Column()
-    last_Name: string;
+    last_name: string;
     @Column()
-    identification_car: Number;
+    identification_card: Number;
     @Column()
     phone_number: number;
     @Column()

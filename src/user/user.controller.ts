@@ -5,6 +5,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 
 @Controller('user')
 export class UserController {
+  usersRepository: any;
   constructor(private readonly userService: UserService) {}
 
   @Post()
@@ -29,6 +30,6 @@ export class UserController {
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.userService.remove(+id);
+    return this.userService.remove(+id);  
   }
 }
