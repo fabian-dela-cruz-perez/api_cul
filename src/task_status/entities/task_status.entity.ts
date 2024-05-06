@@ -1,9 +1,9 @@
-import { Column, Entity, PrimaryColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class TaskStatus {
-    @PrimaryColumn()
-    id_taks_status: number;
+    @PrimaryGeneratedColumn()
+    id: number;
     @Column()
     description: string;
 }

@@ -10,4 +10,4 @@ export class CreateUserDto {
   first_name: string;
   last_name: string;
 }
-// como hacer para que no se salga de jysonx
+// como hacer para que no se salga de jyson

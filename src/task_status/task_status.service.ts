@@ -1,26 +1,33 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { CreateTaskStatusDto } from './dto/create-task_status.dto';
 import { UpdateTaskStatusDto } from './dto/update-task_status.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { TaskStatus } from './entities/task_status.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class TaskStatusService {
+  constructor(
+    @InjectRepository(TaskStatus)
+    private task_statusRepository: Repository<TaskStatus>
+  ) { }
   create(createTaskStatusDto: CreateTaskStatusDto) {
-    return 'This action adds a new taskStatus';
+    return this.task_statusRepository.save(createTaskStatusDto);
   }
 
   findAll() {
-    return `This action returns all taskStatus`;
+    return this.task_statusRepository.find();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} taskStatus`;
+    return this.task_statusRepository.findOneBy({id});
   }
 
   update(id: number, updateTaskStatusDto: UpdateTaskStatusDto) {
-    return `This action updates a #${id} taskStatus`;
+    return this.task_statusRepository.update(id,updateTaskStatusDto);
   }
 
   remove(id: number) {
-    return `This action removes a #${id} taskStatus`;
+    return this.task_statusRepository.delete(id);
   }
 }

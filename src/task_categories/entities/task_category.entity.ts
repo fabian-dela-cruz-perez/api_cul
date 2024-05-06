@@ -1,12 +1,11 @@
-import { Column, Entity, PrimaryColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class TaskCategory {
-    @PrimaryColumn()
-    id_taks_category:number;
+    @PrimaryGeneratedColumn()
+    id:number;
     @Column()
     description:string;
     @Column()
     color:string;
-
 }

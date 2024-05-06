@@ -8,12 +8,15 @@ export class User {
     first_name: string;
     @Column() //task por inicar, iniciada, terminada
     last_name: string;
-    @Column()
+    @Column({
+        unique:true
+    })
     identification_card: Number;
-    @Column()
+    @Column({
+        unique:true
+    }
+    )
     phone_number: number;
-    @Column()
-    address: string;
     @Column({
         unique:true 
     })
