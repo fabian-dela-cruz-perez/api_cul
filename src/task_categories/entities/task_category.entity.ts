@@ -1,11 +1,14 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn, OneToMany, ManyToOne } from "typeorm";
+import { Task } from "src/task/entities/task.entity";
 
 @Entity()
 export class TaskCategory {
     @PrimaryGeneratedColumn()
-    id:number;
+    id: number;
     @Column()
-    description:string;
+    description: string;
     @Column()
-    color:string;
+    color: string;    
+    @OneToMany(() => Task, (tasks) => tasks.TaskCategoty)
+    tasks: Task[]
 }
