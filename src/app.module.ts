@@ -6,6 +6,10 @@ import { UserModule } from './user/user.module';
 import { User } from './user/entities/user.entity';
 import { ActividadesModule } from './actividades/actividades.module';
 import { actividades } from './actividades/entities/actividade.entity';
+import { TaskStatusModule } from './task_status/task_status.module';
+import { TaskCategoriesModule } from './task_categories/task_categories.module';
+import { TaskModule } from './task/task.module';
+import { Task } from './task/entities/task.entity';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -15,9 +19,9 @@ import { actividades } from './actividades/entities/actividade.entity';
    username: 'root',
    password: '03160606',
    database: 'api_cul',
-   entities: [User,actividades],
+   entities: [User,Task],
    synchronize: true,
-  }), UserModule, ActividadesModule],
+  }), UserModule, ActividadesModule, TaskStatusModule, TaskCategoriesModule, TaskModule],
   controllers: [AppController],
   providers: [AppService],
 })

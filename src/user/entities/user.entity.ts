@@ -6,7 +6,7 @@ export class User {
     id: number;
     @Column()
     first_name: string;
-    @Column()
+    @Column() //task por inicar, iniciada, terminada
     last_name: string;
     @Column()
     identification_card: Number;
@@ -14,7 +14,9 @@ export class User {
     phone_number: number;
     @Column()
     address: string;
-    @Column()
+    @Column({
+        unique:true 
+    })
     e_mail: string;
     @Column({ default: true })
     isActive: boolean;
